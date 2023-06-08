@@ -1,0 +1,13 @@
+github.com/dgrijalva/jwt-go v3.2.0+incompatible/go.mod h1:E3ru+11k8xSBh+hMPgOLZmtrrCbhqsmaPHjLKYnJCaQ=
+github.com/gofrs/uuid v3.2.0+incompatible h1:y12jRkkFxsd7GpqdSZ+/KCs/fJbqpEXSGd4+jfEaewE=
+github.com/gofrs/uuid v3.2.0+incompatible/go.mod h1:b2aQJv3Z4Fp6yNu3cdSllBxTCLRxnplIgP/c0N/04lM=
+github.com/julienschmidt/httprouter v1.3.0 h1:U0609e9tgbseu3rBINet9P48AI/D3oJs4dN7jwJOQ1U=
+github.com/julienschmidt/httprouter v1.3.0/go.mod h1:JR6WtHb+2LUe8TCKY3cZOxFyyO8IZAc4RVcycCCAKdM=
+github.com/tiny-go/codec v1.0.0 h1:GzOtsN6BLXAmbmlwoJ0wHSBxQAAupxYk0UAZPvEArrM=
+github.com/tiny-go/codec v1.0.0/go.mod h1:9bR0GUsR+ecErWI+jiR3WZuK7SVvzvrFCcpE4s35gDM=
+github.com/tiny-go/errors v1.0.0 h1:Q8YNDpx1q2bUTO4N+fO23ODpfAOX8N1khVNi8lLQ0wc=
+github.com/tiny-go/errors v1.0.0/go.mod h1:E8szF6M3T87HueDR8kveQ+aWUhYHBZ1QmSX80lu+fR4=
+github.com/tiny-go/middleware v1.1.0 h1:cIJr2vGhnUMUd7/q0C+kld4J9nuewAzT+cNYwRHJ9NQ=
+github.com/tiny-go/middleware v1.1.0/go.mod h1:DSaVXOFscGmEgQAWaFlB0rdmpWIrGP0fs+eOb0/LrLY=
+github.com/tiny-go/timap v1.0.0 h1:fA3YQfFAPnovp7pkiPZ2YnW5qhyannTw60k2Li2ulu8=
+github.com/tiny-go/timap v1.0.0/go.mod h1:gqsUWIiFMPTi/BhTx7Wg/E2m11PcvI8y29Ni5vpe5hE=
