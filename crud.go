@@ -10,7 +10,7 @@ import (
 
 var diaryEntries []DiaryEntry
 
-func createDiaryEntry(writer http.ResponseWriter, request *http.Request, params httprouter.Params) {
+func createDiaryEntry(writer http.ResponseWriter, request *http.Request, _ httprouter.Params) {
 	var diaryEntry DiaryEntry
 	err := json.NewDecoder(request.Body).Decode(&diaryEntry)
 	if err != nil {
@@ -21,11 +21,17 @@ func createDiaryEntry(writer http.ResponseWriter, request *http.Request, params 
 	diaryEntry.CreatedAt = time.Now()
 	diaryEntry.UpdatedAt = time.Now()
 	diaryEntries = append(diaryEntries, diaryEntry)
-	json.NewEncoder(writer).Encode(diaryEntry)
+	errEncoder := json.NewEncoder(writer).Encode(diaryEntry)
+	if errEncoder != nil {
+		return
+	}
 }
 
-func getAllDiaryEntries(writer http.ResponseWriter, request *http.Request, _ httprouter.Params) {
-	json.NewEncoder(writer).Encode(diaryEntries)
+func getAllDiaryEntries(writer http.ResponseWriter, _ *http.Request, _ httprouter.Params) {
+	errEncoder := json.NewEncoder(writer).Encode(diaryEntries)
+	if errEncoder != nil {
+		return
+	}
 }
 
 func getDiaryEntry(writer http.ResponseWriter, request *http.Request, params httprouter.Params) {
@@ -36,7 +42,10 @@ func getDiaryEntry(writer http.ResponseWriter, request *http.Request, params htt
 	}
 	for _, d := range diaryEntries {
 		if d.ID == id {
-			json.NewEncoder(writer).Encode(d)
+			errEncoder := json.NewEncoder(writer).Encode(d)
+			if errEncoder != nil {
+				return
+			}
 			return
 		}
 	}
@@ -61,7 +70,10 @@ func updateDiaryEntry(writer http.ResponseWriter, request *http.Request, params 
 			diaryEntry.CreatedAt = d.CreatedAt
 			diaryEntry.UpdatedAt = time.Now()
 			diaryEntries[i] = diaryEntry
-			json.NewEncoder(writer).Encode(diaryEntry)
+			errEncoder := json.NewEncoder(writer).Encode(diaryEntry)
+			if errEncoder != nil {
+				return
+			}
 			return
 		}
 	}
